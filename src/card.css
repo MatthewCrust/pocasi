@@ -1,0 +1,59 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.forecast{
+    display: flex;
+    flex-direction: row;    
+    background-color: black;
+    color: white;
+    border-top: 2px solid white;
+}
+.forecast-item{
+    padding-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.current-weather{
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-right: 2px solid white;
+}
+#currentTemp{
+    font-size:50px;
+    margin: 0px;
+    font-weight:100;
+}
+#currentWeather{
+    font-size:25px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+}
+.currentVal{
+    font-weight: 700;
+}
+#forecastTemp{
+    font-weight: 800;
+    font-size: x-large;
+}
+#forecastWeather{
+    font-size: larger;
+}
+.forecast-container{
+    flex-direction: flex;
+    flex-direction: column;
+    background-color: black;
+}
+.card-title{
+    color: white;
+    font-size: 100px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
