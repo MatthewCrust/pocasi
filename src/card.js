@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './card.css'; // Import CSS file for styling
+import './card.css'; 
 
 function Card({ mesto }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -8,7 +8,7 @@ function Card({ mesto }) {
   useEffect(() => {
     const apiKey = '105f5a492b6d4877bdd0096e6a897f36';
 
-    // Fetch current weather data
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${mesto}&appid=${apiKey}&lang=cz`)
       .then(response => {
         if (!response.ok) {
@@ -23,7 +23,7 @@ function Card({ mesto }) {
         console.error('Error fetching weather data:', error);
       });
 
-    // Fetch forecast data for the next three days
+
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${mesto}&appid=${apiKey}&lang=cz`)
       .then(response => {
         if (!response.ok) {
@@ -32,11 +32,11 @@ function Card({ mesto }) {
         return response.json();
       })
       .then(data => {
-        // Filter forecast data for 15:00 for the next three days
+
         const filteredForecastData = data.list.filter(item => {
-          // Check if the forecast timestamp is for 15:00
+
           const date = new Date(item.dt * 1000);
-          return date.getHours() === 13 && date.getMinutes() === 0; // Check if it's 15:00
+          return date.getHours() === 13 && date.getMinutes() === 0; 
         });
         setForecastData(filteredForecastData);
         console.log("Forecast Data:", JSON.stringify(filteredForecastData, null, 2));
