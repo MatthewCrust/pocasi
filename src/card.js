@@ -39,7 +39,6 @@ function Card({ mesto }) {
           return date.getHours() === 13 && date.getMinutes() === 0; 
         });
         setForecastData(filteredForecastData);
-        console.log("Forecast Data:", JSON.stringify(filteredForecastData, null, 2));
       })
       .catch(error => {
         console.error('Error fetching forecast data:', error);
@@ -78,7 +77,7 @@ function Card({ mesto }) {
           </div>
 
             <div className='forecast-container'>
-                <h2 className="card-title">{mesto} - Česko</h2>
+                <h2 className="card-title">{mesto}</h2>
                 <div className="forecast">
                         {forecastData.map((item, index) => (
                     <div key={index} className="forecast-item">

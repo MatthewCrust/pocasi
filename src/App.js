@@ -1,15 +1,21 @@
+import React, { useState } from 'react';
 import './App.css';
-import Card from './card';
-
+import HomePage from './HomePage';
+import Login from './Login';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
 function App() {
+  
   return (
-    <div className="App">
-      <Card mesto={"Prague"}/>  
-      <Card mesto={"Liberec"}/>
-      <Card mesto={"Brno"}/>
-      <Card mesto={"Pilsen"}/>
-      <Card mesto={"Louny"}/>
-    </div>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/second-page" element={<HomePage />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
+
   );
 }
 
